@@ -15,13 +15,12 @@ class CharlesClient {
     private var clearURL: URL?
     private var exportURL: URL?
     
-    
     init() {
         self.baseURLString = "http://control.charles"
         self.stopURL = URL(string: "\(self.baseURLString)/recording/stop")
-        self.startURL = URL(string: "\(self.baseURLString)/recording/stop")
-        self.clearURL = URL(string: "\(self.baseURLString)/recording/stop")
-        self.exportURL = URL(string: "\(self.baseURLString)/recording/stop")
+        self.startURL = URL(string: "\(self.baseURLString)/recording/start")
+        self.clearURL = URL(string: "\(self.baseURLString)/session/clear")
+        self.exportURL = URL(string: "\(self.baseURLString)/session/export-json")
     }
     
     func startRecording() {
@@ -31,19 +30,19 @@ class CharlesClient {
     }
     
     func stopRecording() {
-        let task = URLSession.shared.dataTask(with: self.startURL!) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: self.stopURL!) { (data, response, error) in
         }
         task.resume()
     }
     
     func clearSession() {
-        let task = URLSession.shared.dataTask(with: self.startURL!) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: self.clearURL!) { (data, response, error) in
         }
         task.resume()
     }
     
     func exportData(handler: @escaping (Data?) -> Void) {
-        let task = URLSession.shared.dataTask(with: self.startURL!) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: self.exportURL!) { (data, response, error) in
             handler(data)
         }
         task.resume()
