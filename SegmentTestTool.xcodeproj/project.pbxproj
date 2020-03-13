@@ -9,7 +9,20 @@
 /* Begin PBXBuildFile section */
 		AC263907241AD877007C8BD9 /* SegmentTestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC263906241AD877007C8BD9 /* SegmentTestTool.swift */; };
 		AC26390E241ADBD2007C8BD9 /* CharlesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC26390D241ADBD2007C8BD9 /* CharlesClient.swift */; };
+		AC263929241BC9CE007C8BD9 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC263928241BC9CE007C8BD9 /* Tests.swift */; };
+		AC26392B241BC9CE007C8BD9 /* libSegmentTestTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC263903241AD877007C8BD9 /* libSegmentTestTool.a */; };
+		AC263931241BC9F0007C8BD9 /* CharlesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC26390D241ADBD2007C8BD9 /* CharlesClient.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC26392C241BC9CE007C8BD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC2638FB241AD877007C8BD9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC263902241AD877007C8BD9;
+			remoteInfo = SegmentTestTool;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		AC263901241AD877007C8BD9 /* CopyFiles */ = {
@@ -27,6 +40,9 @@
 		AC263903241AD877007C8BD9 /* libSegmentTestTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSegmentTestTool.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC263906241AD877007C8BD9 /* SegmentTestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentTestTool.swift; sourceTree = "<group>"; };
 		AC26390D241ADBD2007C8BD9 /* CharlesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharlesClient.swift; sourceTree = "<group>"; };
+		AC263926241BC9CE007C8BD9 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC263928241BC9CE007C8BD9 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		AC26392A241BC9CE007C8BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +53,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AC263923241BC9CE007C8BD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC26392B241BC9CE007C8BD9 /* libSegmentTestTool.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -44,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				AC263905241AD877007C8BD9 /* SegmentTestTool */,
+				AC263927241BC9CE007C8BD9 /* Tests */,
 				AC263904241AD877007C8BD9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				AC263903241AD877007C8BD9 /* libSegmentTestTool.a */,
+				AC263926241BC9CE007C8BD9 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,6 +89,15 @@
 				AC26390D241ADBD2007C8BD9 /* CharlesClient.swift */,
 			);
 			path = SegmentTestTool;
+			sourceTree = "<group>";
+		};
+		AC263927241BC9CE007C8BD9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AC263928241BC9CE007C8BD9 /* Tests.swift */,
+				AC26392A241BC9CE007C8BD9 /* Info.plist */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +120,24 @@
 			productReference = AC263903241AD877007C8BD9 /* libSegmentTestTool.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		AC263925241BC9CE007C8BD9 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC263930241BC9CE007C8BD9 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				AC263922241BC9CE007C8BD9 /* Sources */,
+				AC263923241BC9CE007C8BD9 /* Frameworks */,
+				AC263924241BC9CE007C8BD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC26392D241BC9CE007C8BD9 /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = AC263926241BC9CE007C8BD9 /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +149,9 @@
 				ORGANIZATIONNAME = "Willow Tree Apps";
 				TargetAttributes = {
 					AC263902241AD877007C8BD9 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					AC263925241BC9CE007C8BD9 = {
 						CreatedOnToolsVersion = 11.1;
 					};
 				};
@@ -114,9 +170,20 @@
 			projectRoot = "";
 			targets = (
 				AC263902241AD877007C8BD9 /* SegmentTestTool */,
+				AC263925241BC9CE007C8BD9 /* Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC263924241BC9CE007C8BD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AC2638FF241AD877007C8BD9 /* Sources */ = {
@@ -128,7 +195,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AC263922241BC9CE007C8BD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC263929241BC9CE007C8BD9 /* Tests.swift in Sources */,
+				AC263931241BC9F0007C8BD9 /* CharlesClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC26392D241BC9CE007C8BD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC263902241AD877007C8BD9 /* SegmentTestTool */;
+			targetProxy = AC26392C241BC9CE007C8BD9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AC263908241AD877007C8BD9 /* Debug */ = {
@@ -271,6 +355,42 @@
 			};
 			name = Release;
 		};
+		AC26392E241BC9CE007C8BD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6663MSD9N9;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = WillowTreeApps.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC26392F241BC9CE007C8BD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6663MSD9N9;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = WillowTreeApps.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -288,6 +408,15 @@
 			buildConfigurations = (
 				AC26390B241AD877007C8BD9 /* Debug */,
 				AC26390C241AD877007C8BD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC263930241BC9CE007C8BD9 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC26392E241BC9CE007C8BD9 /* Debug */,
+				AC26392F241BC9CE007C8BD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
