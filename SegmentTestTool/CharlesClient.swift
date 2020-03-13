@@ -23,27 +23,30 @@ class CharlesClient {
         self.exportURL = URL(string: "\(self.baseURLString)/session/export-json")
     }
     
-    func startRecording() {
+    func startRecording(completion: @escaping (Data?) -> Void) {
         let task = URLSession.shared.dataTask(with: self.startURL!) { (data, response, error) in
+            completion(data)
         }
         task.resume()
     }
     
-    func stopRecording() {
+    func stopRecording(completion: @escaping (Data?) -> Void) {
         let task = URLSession.shared.dataTask(with: self.stopURL!) { (data, response, error) in
+            completion(data)
         }
         task.resume()
     }
     
-    func clearSession() {
+    func clearSession(completion: @escaping (Data?) -> Void) {
         let task = URLSession.shared.dataTask(with: self.clearURL!) { (data, response, error) in
+            completion(data)
         }
         task.resume()
     }
     
-    func exportData(handler: @escaping (Data?) -> Void) {
+    func exportData(completion: @escaping (Data?) -> Void) {
         let task = URLSession.shared.dataTask(with: self.exportURL!) { (data, response, error) in
-            handler(data)
+            completion(data)
         }
         task.resume()
     }
