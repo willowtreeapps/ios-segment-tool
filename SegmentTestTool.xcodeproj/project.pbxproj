@@ -7,11 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC263907241AD877007C8BD9 /* SegmentTestTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC263906241AD877007C8BD9 /* SegmentTestTool.swift */; };
 		AC26390E241ADBD2007C8BD9 /* CharlesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC26390D241ADBD2007C8BD9 /* CharlesClient.swift */; };
 		AC263929241BC9CE007C8BD9 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC263928241BC9CE007C8BD9 /* Tests.swift */; };
 		AC26392B241BC9CE007C8BD9 /* libSegmentTestTool.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC263903241AD877007C8BD9 /* libSegmentTestTool.a */; };
 		AC263931241BC9F0007C8BD9 /* CharlesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC26390D241ADBD2007C8BD9 /* CharlesClient.swift */; };
+		AC5F1C8E2420144B009608D3 /* BatchElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C842420144B009608D3 /* BatchElement.swift */; };
+		AC5F1C8F2420144B009608D3 /* BatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C852420144B009608D3 /* BatchApp.swift */; };
+		AC5F1C902420144B009608D3 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C862420144B009608D3 /* Segment.swift */; };
+		AC5F1C912420144B009608D3 /* BatchProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C872420144B009608D3 /* BatchProperties.swift */; };
+		AC5F1C922420144B009608D3 /* BatchTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C882420144B009608D3 /* BatchTraits.swift */; };
+		AC5F1C942420144B009608D3 /* ProxyLogRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C8B2420144B009608D3 /* ProxyLogRequest.swift */; };
+		AC5F1C952420144B009608D3 /* ProxyLogElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C8C2420144B009608D3 /* ProxyLogElement.swift */; };
+		AC5F1C962420144B009608D3 /* ProxyLogRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C8D2420144B009608D3 /* ProxyLogRequestBody.swift */; };
+		AC5F1C9C242017A8009608D3 /* testjson.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC5F1C9B242017A8009608D3 /* testjson.txt */; };
+		AC5F1CA124201E5B009608D3 /* ProxyLogElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C8C2420144B009608D3 /* ProxyLogElement.swift */; };
+		AC5F1CA224201E63009608D3 /* ProxyLogRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C8D2420144B009608D3 /* ProxyLogRequestBody.swift */; };
+		AC5F1CA324201E65009608D3 /* ProxyLogRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C8B2420144B009608D3 /* ProxyLogRequest.swift */; };
+		AC5F1CA524201E6B009608D3 /* BatchTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C882420144B009608D3 /* BatchTraits.swift */; };
+		AC5F1CA624201E6D009608D3 /* BatchProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C872420144B009608D3 /* BatchProperties.swift */; };
+		AC5F1CA724201E6F009608D3 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C862420144B009608D3 /* Segment.swift */; };
+		AC5F1CA824201E73009608D3 /* BatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C852420144B009608D3 /* BatchApp.swift */; };
+		AC5F1CA924201E75009608D3 /* BatchElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C842420144B009608D3 /* BatchElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,11 +54,19 @@
 
 /* Begin PBXFileReference section */
 		AC263903241AD877007C8BD9 /* libSegmentTestTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSegmentTestTool.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC263906241AD877007C8BD9 /* SegmentTestTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentTestTool.swift; sourceTree = "<group>"; };
 		AC26390D241ADBD2007C8BD9 /* CharlesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharlesClient.swift; sourceTree = "<group>"; };
 		AC263926241BC9CE007C8BD9 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC263928241BC9CE007C8BD9 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		AC26392A241BC9CE007C8BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC5F1C842420144B009608D3 /* BatchElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatchElement.swift; sourceTree = "<group>"; };
+		AC5F1C852420144B009608D3 /* BatchApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatchApp.swift; sourceTree = "<group>"; };
+		AC5F1C862420144B009608D3 /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
+		AC5F1C872420144B009608D3 /* BatchProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatchProperties.swift; sourceTree = "<group>"; };
+		AC5F1C882420144B009608D3 /* BatchTraits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatchTraits.swift; sourceTree = "<group>"; };
+		AC5F1C8B2420144B009608D3 /* ProxyLogRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyLogRequest.swift; sourceTree = "<group>"; };
+		AC5F1C8C2420144B009608D3 /* ProxyLogElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyLogElement.swift; sourceTree = "<group>"; };
+		AC5F1C8D2420144B009608D3 /* ProxyLogRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyLogRequestBody.swift; sourceTree = "<group>"; };
+		AC5F1C9B242017A8009608D3 /* testjson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testjson.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +109,7 @@
 		AC263905241AD877007C8BD9 /* SegmentTestTool */ = {
 			isa = PBXGroup;
 			children = (
-				AC263906241AD877007C8BD9 /* SegmentTestTool.swift */,
+				AC5F1C822420144B009608D3 /* Data */,
 				AC26390D241ADBD2007C8BD9 /* CharlesClient.swift */,
 			);
 			path = SegmentTestTool;
@@ -94,10 +118,50 @@
 		AC263927241BC9CE007C8BD9 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				AC5F1C9724201615009608D3 /* Resources */,
 				AC263928241BC9CE007C8BD9 /* Tests.swift */,
 				AC26392A241BC9CE007C8BD9 /* Info.plist */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		AC5F1C822420144B009608D3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AC5F1C832420144B009608D3 /* Segment */,
+				AC5F1C8A2420144B009608D3 /* Log */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		AC5F1C832420144B009608D3 /* Segment */ = {
+			isa = PBXGroup;
+			children = (
+				AC5F1C842420144B009608D3 /* BatchElement.swift */,
+				AC5F1C852420144B009608D3 /* BatchApp.swift */,
+				AC5F1C862420144B009608D3 /* Segment.swift */,
+				AC5F1C872420144B009608D3 /* BatchProperties.swift */,
+				AC5F1C882420144B009608D3 /* BatchTraits.swift */,
+			);
+			path = Segment;
+			sourceTree = "<group>";
+		};
+		AC5F1C8A2420144B009608D3 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				AC5F1C8B2420144B009608D3 /* ProxyLogRequest.swift */,
+				AC5F1C8C2420144B009608D3 /* ProxyLogElement.swift */,
+				AC5F1C8D2420144B009608D3 /* ProxyLogRequestBody.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		AC5F1C9724201615009608D3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC5F1C9B242017A8009608D3 /* testjson.txt */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +174,7 @@
 				AC2638FF241AD877007C8BD9 /* Sources */,
 				AC263900241AD877007C8BD9 /* Frameworks */,
 				AC263901241AD877007C8BD9 /* CopyFiles */,
+				AC5F1C9F2420182D009608D3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -180,6 +245,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5F1C9C242017A8009608D3 /* testjson.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC5F1C9F2420182D009608D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,8 +263,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC263907241AD877007C8BD9 /* SegmentTestTool.swift in Sources */,
 				AC26390E241ADBD2007C8BD9 /* CharlesClient.swift in Sources */,
+				AC5F1C962420144B009608D3 /* ProxyLogRequestBody.swift in Sources */,
+				AC5F1C952420144B009608D3 /* ProxyLogElement.swift in Sources */,
+				AC5F1C912420144B009608D3 /* BatchProperties.swift in Sources */,
+				AC5F1C8E2420144B009608D3 /* BatchElement.swift in Sources */,
+				AC5F1C8F2420144B009608D3 /* BatchApp.swift in Sources */,
+				AC5F1C942420144B009608D3 /* ProxyLogRequest.swift in Sources */,
+				AC5F1C902420144B009608D3 /* Segment.swift in Sources */,
+				AC5F1C922420144B009608D3 /* BatchTraits.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,8 +279,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5F1CA524201E6B009608D3 /* BatchTraits.swift in Sources */,
+				AC5F1CA724201E6F009608D3 /* Segment.swift in Sources */,
+				AC5F1CA924201E75009608D3 /* BatchElement.swift in Sources */,
+				AC5F1CA324201E65009608D3 /* ProxyLogRequest.swift in Sources */,
+				AC5F1CA824201E73009608D3 /* BatchApp.swift in Sources */,
 				AC263929241BC9CE007C8BD9 /* Tests.swift in Sources */,
+				AC5F1CA124201E5B009608D3 /* ProxyLogElement.swift in Sources */,
 				AC263931241BC9F0007C8BD9 /* CharlesClient.swift in Sources */,
+				AC5F1CA224201E63009608D3 /* ProxyLogRequestBody.swift in Sources */,
+				AC5F1CA624201E6D009608D3 /* BatchProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

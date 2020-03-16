@@ -9,5 +9,5 @@
 import Foundation
 
 struct ProxyLogRequestBody: Codable {
-    var text: Segment
+    var text: String?
 }

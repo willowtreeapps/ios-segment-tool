@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ProxyLog: Codable {
+struct ProxyLogElement: Codable {
     var status: String?
     var host: String?
     var path: String?
