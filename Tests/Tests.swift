@@ -53,5 +53,16 @@ class Tests: XCTestCase {
         }
         wait(for: [expectation], timeout: 10)
     }
-
+    
+    func testSegmentParsing() {
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: "testjson", ofType: "txt")
+        let fileString = try! String(contentsOfFile: path!)
+        let data = fileString.data(using: .utf8)!
+        let decoder = JSONDecoder()
+        let log = try! decoder.decode([ProxyLogElement].self, from: data)
+        let segmentString = log[0].request?.body?.text
+        let segmentData = segmentString!.data(using: .utf8)!
+        let segment = try! decoder.decode(Segment.self, from: segmentData)
+    }
 }
