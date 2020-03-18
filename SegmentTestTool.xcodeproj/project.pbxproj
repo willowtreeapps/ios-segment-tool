@@ -28,6 +28,8 @@
 		AC5F1CA724201E6F009608D3 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C862420144B009608D3 /* Segment.swift */; };
 		AC5F1CA824201E73009608D3 /* BatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C852420144B009608D3 /* BatchApp.swift */; };
 		AC5F1CA924201E75009608D3 /* BatchElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1C842420144B009608D3 /* BatchElement.swift */; };
+		AC5F1CAB24202ABC009608D3 /* SegmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1CAA24202ABC009608D3 /* SegmentService.swift */; };
+		AC5F1CAC24202ABC009608D3 /* SegmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5F1CAA24202ABC009608D3 /* SegmentService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,7 @@
 		AC5F1C8C2420144B009608D3 /* ProxyLogElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyLogElement.swift; sourceTree = "<group>"; };
 		AC5F1C8D2420144B009608D3 /* ProxyLogRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyLogRequestBody.swift; sourceTree = "<group>"; };
 		AC5F1C9B242017A8009608D3 /* testjson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testjson.txt; sourceTree = "<group>"; };
+		AC5F1CAA24202ABC009608D3 /* SegmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,7 @@
 			children = (
 				AC5F1C822420144B009608D3 /* Data */,
 				AC26390D241ADBD2007C8BD9 /* CharlesClient.swift */,
+				AC5F1CAA24202ABC009608D3 /* SegmentService.swift */,
 			);
 			path = SegmentTestTool;
 			sourceTree = "<group>";
@@ -272,6 +276,7 @@
 				AC5F1C942420144B009608D3 /* ProxyLogRequest.swift in Sources */,
 				AC5F1C902420144B009608D3 /* Segment.swift in Sources */,
 				AC5F1C922420144B009608D3 /* BatchTraits.swift in Sources */,
+				AC5F1CAB24202ABC009608D3 /* SegmentService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5F1CAC24202ABC009608D3 /* SegmentService.swift in Sources */,
 				AC5F1CA524201E6B009608D3 /* BatchTraits.swift in Sources */,
 				AC5F1CA724201E6F009608D3 /* Segment.swift in Sources */,
 				AC5F1CA924201E75009608D3 /* BatchElement.swift in Sources */,

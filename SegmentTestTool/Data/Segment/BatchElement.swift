@@ -12,4 +12,5 @@ struct BatchElement: Codable {
     var app: BatchApp?
     var traits: BatchTraits?
     var properties: BatchProperties?
+    var type: String?
 }
