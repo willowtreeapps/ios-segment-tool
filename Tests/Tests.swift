@@ -17,36 +17,6 @@ class Tests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-    
-    private func waitForSegmentCalls(expectedCallType: String, expectedPageType: String) -> [BatchElement]{
-        var tries = 0
-        let client = CharlesClient()
-        let service = SegmentService()
-        var result: [BatchElement] = []
-        while tries < 18 {
-            let expectation = XCTestExpectation()
-            client.exportData(completion: { (data) in
-                service.dataToProxyLogIn(from: data!, completion: { (log) in
-                        service.segmentCallsIn(from: log, completion: { (segmentList) in
-                            service.matchingSegmentBatchesIn(
-                                    completion: { (expectedBatchElements) in
-                                        if expectedBatchElements.count > 0 {result = expectedBatchElements; tries = 18}
-                                        else {
-                                            sleep(5)
-                                        }
-                                    },
-                                    from: segmentList,
-                                    expectedCallType: expectedCallType,
-                                    expectedPageType: expectedPageType
-                                )
-                        })
-                    })
-            })
-            _ = XCTWaiter.wait(for: [expectation], timeout: 10)
-            tries += 1
-        }
-        return result
-    }
 
     func testStart() {
         let expectation = XCTestExpectation()

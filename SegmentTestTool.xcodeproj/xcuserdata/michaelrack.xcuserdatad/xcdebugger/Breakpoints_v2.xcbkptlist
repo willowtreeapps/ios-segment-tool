@@ -16,7 +16,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
             endingLineNumber = "62"
-            landmarkName = "testStop()"
+            landmarkName = "testSegmentParsing()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -32,7 +32,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "53"
             endingLineNumber = "53"
-            landmarkName = "testStart()"
+            landmarkName = "testExport()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -48,7 +48,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
             endingLineNumber = "54"
-            landmarkName = "testStart()"
+            landmarkName = "testExport()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -159,9 +159,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "testBatchFound()"
-            landmarkType = "7">
+            endingLineNumber = "107">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -176,7 +174,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
-            landmarkName = "matchingSegmentBatchesIn(completion:from:expectedCallType:expectedPageType:)"
+            landmarkName = "waitForSegmentCalls(expectedCallType:expectedPageType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -192,7 +190,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
             endingLineNumber = "35"
-            landmarkName = "matchingSegmentBatchesIn(completion:from:expectedCallType:expectedPageType:)"
+            landmarkName = "waitForSegmentCalls(expectedCallType:expectedPageType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -208,7 +206,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
             endingLineNumber = "36"
-            landmarkName = "matchingSegmentBatchesIn(completion:from:expectedCallType:expectedPageType:)"
+            landmarkName = "waitForSegmentCalls(expectedCallType:expectedPageType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -224,7 +222,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "matchingSegmentBatchesIn(completion:from:expectedCallType:expectedPageType:)"
+            landmarkName = "waitForSegmentCalls(expectedCallType:expectedPageType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -240,7 +238,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
             endingLineNumber = "38"
-            landmarkName = "matchingSegmentBatchesIn(completion:from:expectedCallType:expectedPageType:)"
+            landmarkName = "waitForSegmentCalls(expectedCallType:expectedPageType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -256,7 +254,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
             endingLineNumber = "39"
-            landmarkName = "matchingSegmentBatchesIn(completion:from:expectedCallType:expectedPageType:)"
+            landmarkName = "waitForSegmentCalls(expectedCallType:expectedPageType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -12,6 +12,34 @@ class SegmentService {
     let client = CharlesClient()
     let decoder = JSONDecoder()
     
+    func waitForSegmentCalls(expectedCallType: String, expectedPageType: String, completion: @escaping ([BatchElement]) -> ()) {
+        var tries = 0
+        let client = CharlesClient()
+        let service = SegmentService()
+        while tries < 18 {
+            // Break this out
+            client.exportData(completion: { (data) in
+                service.dataToProxyLogIn(from: data!, completion: { (log) in
+                        service.segmentCallsIn(from: log, completion: { (segmentList) in
+                            service.matchingSegmentBatchesIn(
+                                    completion: { (expectedBatchElements) in
+                                        if expectedBatchElements.count > 0 {completion(expectedBatchElements); tries = 18}
+                                        else {
+                                            sleep(5)
+                                        }
+                                    },
+                                    from: segmentList,
+                                    expectedCallType: expectedCallType,
+                                    expectedPageType: expectedPageType
+                                )
+                        })
+                    })
+            })
+            //TODO: put expectation in test
+            tries += 1
+        }
+    }
+    
     func dataToProxyLogIn(from data: Data, completion: @escaping ([ProxyLogElement]) -> Void) {
         guard let log = try? self.decoder.decode([ProxyLogElement].self, from: data) else { return }
         completion(log)
