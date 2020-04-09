@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "SegmentTestTool"
+  spec.name         = "ios-segment-tool"
   spec.version      = "0.0.1"
   spec.summary      = "A short description of ios-segment-tool."
 
@@ -78,7 +78,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "git@github.com:willowtreeapps/ios-segment-tool.git"}
+  spec.source       = { :git => "https://github.com/willowtreeapps/ios-segment-tool.git"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -89,8 +89,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "SegmentTestTool", "SegmentTestTool/**/*.{swift}"
-  spec.exclude_files = ""
+  spec.source_files  = "Classes/**", "Classes/**/**"
 
   # spec.public_header_files = "Classes/**/*.h"
 
