@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "ios-segment-tool"
+  spec.name         = "SegmentTestTool"
   spec.version      = "0.0.1"
   spec.summary      = "A short description of ios-segment-tool."
 
@@ -26,7 +26,7 @@ Pod::Spec.new do |spec|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = "my description here"
 
-  spec.homepage     = "https://github.com/willowtreeapps/ios-segment-tool"
+  spec.homepage     = 'git@github.com:willowtreeapps/ios-segment-tool.git'
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
