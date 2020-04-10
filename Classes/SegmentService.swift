@@ -18,29 +18,31 @@ public class SegmentService {
     
     // Waits in 5 second intervals. Default numberOfTries waits 90 seconds.
     public func waitForSegmentCalls(expectedCallType: String, expectedPageType: String, numberOfTries: Int = 18, completion: @escaping ([BatchElement]) -> ()) {
-        var tries = 0
         let client = CharlesClient()
         let service = SegmentService()
-        while tries < numberOfTries {
+        var testEnd = false
+        checkSegment: for _ in 0...numberOfTries {
             client.exportData(completion: { (data) in
                 service.dataToProxyLogIn(from: data!, completion: { (log) in
-                        service.segmentCallsIn(from: log, completion: { (segmentList) in
-                            service.matchingSegmentBatchesIn(
-                                    completion: { (expectedBatchElements) in
-                                        if expectedBatchElements.count > 0 {completion(expectedBatchElements); tries = numberOfTries}
-                                        else {
-                                            sleep(5)
-                                        }
-                                    },
-                                    from: segmentList,
-                                    expectedCallType: expectedCallType,
-                                    expectedPageType: expectedPageType
+                    service.segmentCallsIn(from: log, completion: { (segmentList) in
+                        service.matchingSegmentBatchesIn(
+                                completion: { (expectedBatchElements) in
+                                    if expectedBatchElements.count > 0 {
+                                        completion(expectedBatchElements)
+                                        testEnd = true
+                                    }
+                                    else {
+                                        sleep(5)
+                                    }
+                                },
+                                from: segmentList,
+                                expectedCallType: expectedCallType,
+                                expectedPageType: expectedPageType
                                 )
-                        })
                     })
+                })
             })
-            //TODO: put expectation in test
-            tries += 1
+            if testEnd { break checkSegment }
         }
     }
     
