@@ -8,9 +8,13 @@
 
 import Foundation
 
-struct ProxyLogElement: Codable {
-    var status: String?
-    var host: String?
-    var path: String?
-    var request: ProxyLogRequest?
+public struct ProxyLogElement: Codable {
+    public var status: String?
+    public var host: String?
+    public var path: String?
+    public var request: ProxyLogRequest?
+
+    public init() {
+        super.init()
+    }
 }

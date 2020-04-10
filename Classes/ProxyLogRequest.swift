@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct ProxyLogRequest: Codable {
-    var body: ProxyLogRequestBody?
+public struct ProxyLogRequest: Codable {
+    public var body: ProxyLogRequestBody?
 }

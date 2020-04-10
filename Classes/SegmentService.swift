@@ -11,8 +11,12 @@ import Foundation
 class SegmentService {
     let client = CharlesClient()
     let decoder = JSONDecoder()
+
+    public init() {
+        
+    }
     
-    func waitForSegmentCalls(expectedCallType: String, expectedPageType: String, completion: @escaping ([BatchElement]) -> ()) {
+    public func waitForSegmentCalls(expectedCallType: String, expectedPageType: String, completion: @escaping ([BatchElement]) -> ()) {
         var tries = 0
         let client = CharlesClient()
         let service = SegmentService()
@@ -40,12 +44,12 @@ class SegmentService {
         }
     }
     
-    func dataToProxyLogIn(from data: Data, completion: @escaping ([ProxyLogElement]) -> Void) {
+    public func dataToProxyLogIn(from data: Data, completion: @escaping ([ProxyLogElement]) -> Void) {
         guard let log = try? self.decoder.decode([ProxyLogElement].self, from: data) else { return }
         completion(log)
     }
     
-    func segmentCallsIn(from log: [ProxyLogElement], completion: @escaping ([Segment]) -> Void) {
+    public func segmentCallsIn(from log: [ProxyLogElement], completion: @escaping ([Segment]) -> Void) {
         var segmentList: [Segment] = []
         for element in log {
             if element.host == "api.segment.io" {
@@ -58,7 +62,7 @@ class SegmentService {
         completion(segmentList)
     }
     
-    func matchingSegmentBatchesIn(completion: @escaping ([BatchElement]) -> Void, from segmentList: [Segment], expectedCallType: String, expectedPageType: String) {
+    public func matchingSegmentBatchesIn(completion: @escaping ([BatchElement]) -> Void, from segmentList: [Segment], expectedCallType: String, expectedPageType: String) {
         var expectedBatchElements: [BatchElement] = []
         for segmentElement in segmentList {
             let batch = segmentElement.batch

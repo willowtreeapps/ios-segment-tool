@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct ProxyLogRequestBody: Codable {
-    var text: String?
+public struct ProxyLogRequestBody: Codable {
+    public var text: String?
 }

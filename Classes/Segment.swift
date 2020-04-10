@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Segment: Codable {
-    var batch: [BatchElement]?
+public struct Segment: Codable {
+    public var batch: [BatchElement]?
 }

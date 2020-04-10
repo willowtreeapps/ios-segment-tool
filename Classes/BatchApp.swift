@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct BatchApp: Codable {
-    var buildNumber: String?
-    var appName: String?
-    var appVersion: String?
+public struct BatchApp: Codable {
+    public var buildNumber: String?
+    public var appName: String?
+    public var appVersion: String?
     
     enum CodingKeys: String, CodingKey {
         case buildNumber = "build"
