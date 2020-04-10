@@ -17,7 +17,7 @@ class SegmentService {
     }
     
     // Waits in 5 second intervals. Default numberOfTries waits 90 seconds.
-    public func waitForSegmentCalls(expectedCallType: String, expectedPageType: String, numberOfTries: UInt64 = 18, completion: @escaping ([BatchElement]) -> ()) {
+    public func waitForSegmentCalls(expectedCallType: String, expectedPageType: String, numberOfTries: Int = 18, completion: @escaping ([BatchElement]) -> ()) {
         var tries = 0
         let client = CharlesClient()
         let service = SegmentService()

@@ -13,8 +13,4 @@ public struct ProxyLogElement: Codable {
     public var host: String?
     public var path: String?
     public var request: ProxyLogRequest?
-
-    public init() {
-        super.init()
-    }
 }
