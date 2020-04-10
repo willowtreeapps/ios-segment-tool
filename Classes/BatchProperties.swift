@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct BatchProperties: Codable {
-        var pageName: String?
-        var appVersion: String?
-        var pushEnabled: Bool?
-        var primaryBusinessUnit: String?
-        var secondaryBusinessUnit: String?
-        var appBuild: String?
-        var pageLoginState: String?
-        var pageIsDarkMode: Bool?
-        var appPlatform: String?
-        var appName: String?
-        var pageType: String?
+public struct BatchProperties: Codable {
+        public var pageName: String?
+        public var appVersion: String?
+        public var pushEnabled: Bool?
+        public var primaryBusinessUnit: String?
+        public var secondaryBusinessUnit: String?
+        public var appBuild: String?
+        public var pageLoginState: String?
+        public var pageIsDarkMode: Bool?
+        public var appPlatform: String?
+        public var appName: String?
+        public var pageType: String?
     
     enum CodingKeys: String, CodingKey {
         case pageName = "page_name"

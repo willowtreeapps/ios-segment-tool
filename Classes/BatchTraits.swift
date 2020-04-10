@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct BatchTraits: Codable {
-    var mvpd: String?
+public struct BatchTraits: Codable {
+    public var mvpd: String?
 }
