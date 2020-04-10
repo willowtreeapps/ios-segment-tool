@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SegmentService {
+public class SegmentService {
     let client = CharlesClient()
     let decoder = JSONDecoder()
 
