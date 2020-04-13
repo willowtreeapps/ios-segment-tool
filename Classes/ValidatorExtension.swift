@@ -10,6 +10,7 @@ public extension XCTestCase {
             finalResult.forEach(validator)
             expectation.fulfill()
         case .failure:
+            sleep(5)
             guard currentRetries < maxRetries else {
                 XCTFail()
                 expectation.fulfill()
