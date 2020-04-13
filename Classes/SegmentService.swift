@@ -8,40 +8,40 @@
 
 import Foundation
 
+public enum SegmentError: Error {
+    case noElementsFound
+}
 public class SegmentService {
     let client = CharlesClient()
     let decoder = JSONDecoder()
-
+    
     public init() {
         
     }
     
     // Waits in 5 second intervals. Default numberOfTries waits 90 seconds.
-    public func waitForSegmentCalls(expectedCallType: String, expectedPageType: String, numberOfTries: Int = 18, completion: @escaping ([BatchElement]) -> ()) {
-        var tries = 0
+    public func checkForSegmentCalls(expectedCallType: String, expectedPageType: String, completion: @escaping (Result<[BatchElement], Error>) -> ()) {
         let client = CharlesClient()
         let service = SegmentService()
-        while tries < numberOfTries {
-            client.exportData(completion: { (data) in
-                service.dataToProxyLogIn(from: data!, completion: { (log) in
-                        service.segmentCallsIn(from: log, completion: { (segmentList) in
-                            service.matchingSegmentBatchesIn(
-                                    completion: { (expectedBatchElements) in
-                                        if expectedBatchElements.count > 0 {completion(expectedBatchElements); tries = numberOfTries}
-                                        else {
-                                            sleep(5)
-                                        }
-                                    },
-                                    from: segmentList,
-                                    expectedCallType: expectedCallType,
-                                    expectedPageType: expectedPageType
-                                )
-                        })
-                    })
+        client.exportData(completion: { (data) in
+            service.dataToProxyLogIn(from: data!, completion: { (log) in
+                service.segmentCallsIn(from: log, completion: { (segmentList) in
+                    service.matchingSegmentBatchesIn(
+                        completion: { (expectedBatchElements) in
+                            if expectedBatchElements.count > 0 {
+                                completion(.success(expectedBatchElements))
+                            }
+                            else {
+                                completion(.failure(SegmentError.noElementsFound))
+                            }
+                    },
+                        from: segmentList,
+                        expectedCallType: expectedCallType,
+                        expectedPageType: expectedPageType
+                    )
+                })
             })
-            //TODO: put expectation in test
-            tries += 1
-        }
+        })
     }
     
     public func dataToProxyLogIn(from data: Data, completion: @escaping ([ProxyLogElement]) -> Void) {
