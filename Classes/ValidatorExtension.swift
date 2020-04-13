@@ -17,7 +17,7 @@ public extension XCTestCase {
             }
             SegmentService().checkForSegmentCalls(expectedCallType: expectedCallType, expectedPageType: expectedPageType) { [weak self]
                 (result) in
-                self?.segmentValidator(result: result, expectation: expectation, maxRetries: maxRetries, currentRetries: currentRetries + 1, validator: validator)
+                self?.segmentValidator(result: result, expectation: expectation, maxRetries: maxRetries, currentRetries: currentRetries + 1, expectedCallType: expectedCallType, expectedPageType: expectedPageType, validator: validator)
             }
         }
     }

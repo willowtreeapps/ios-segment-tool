@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "ios-segment-tool"
-  spec.version      = "0.0.5"
+  spec.version      = "0.0.6"
   spec.framework    = 'XCTest'
   spec.summary      = "A short description of ios-segment-tool."
   spec.description  = "my description here"
