@@ -1,3 +1,6 @@
+import Foundation
+import XCTest
+
 public extension XCTestCase {
     typealias ValidationFunction = (BatchElement) -> ()
     func segmentValidator(result: Result<[BatchElement], Error>, expectation: XCTestExpectation, maxRetries: Int, currentRetries: Int = 0, expectedCallType: String = "screen", expectedPageType: String, validator: @escaping ValidationFunction) {
