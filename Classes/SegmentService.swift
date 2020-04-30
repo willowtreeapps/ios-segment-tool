@@ -9,7 +9,7 @@
 import Foundation
 
 public typealias SegmentResult<T: SegmentBatchCodable> = Result<[T], Error>
-public typealias DefaultSegmentResult = SegmentResult<BatchElement>
+public typealias DefaultSegmentResult = SegmentResult<DefaultBatchElement>
 
 public enum SegmentError: Error {
     case noElementsFound
@@ -23,7 +23,7 @@ public class SegmentService {
     }
     
     // Waits in 5 second intervals. Default numberOfTries waits 90 seconds.
-    public func checkForSegmentCalls<T: SegmentBatchCodable>(expectedCallType: String, expectedPageName: String, completion: @escaping (Result<[T], Error>) -> ()) {
+    public func checkForSegmentCalls<T: SegmentBatchCodable>(expectedCallType: String, expectedCallName: String, completion: @escaping (Result<[T], Error>) -> ()) {
         let client = CharlesClient()
         let service = SegmentService()
         client.exportData(completion: { (data) in
@@ -40,7 +40,7 @@ public class SegmentService {
                     },
                         from: segmentList,
                         expectedCallType: expectedCallType,
-                        expectedPageName: expectedPageName
+                        expectedCallName: expectedCallName
                     )
                 })
             })
@@ -65,12 +65,12 @@ public class SegmentService {
         completion(segmentList)
     }
     
-    public func matchingSegmentBatchesIn<T: SegmentBatchCodable>(completion: @escaping ([T]) -> Void, from segmentList: [Segment<T>], expectedCallType: String, expectedPageName: String) {
+    public func matchingSegmentBatchesIn<T: SegmentBatchCodable>(completion: @escaping ([T]) -> Void, from segmentList: [Segment<T>], expectedCallType: String, expectedCallName: String) {
         var expectedBatchElements: [T] = []
         for segmentElement in segmentList {
             let batch = segmentElement.batch
             for batchElement in batch ?? [] {
-                if batchElement.type == expectedCallType && batchElement.name == expectedPageName {
+                if batchElement.type == expectedCallType && batchElement.name == expectedCallName {
                     expectedBatchElements.append(batchElement)
                 }
             }
