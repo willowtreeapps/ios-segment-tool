@@ -8,9 +8,10 @@
 
 import Foundation
 
-public struct BatchElement: Codable {
+public struct BatchElement: SegmentBatchCodable {
     public var app: BatchApp?
     public var traits: BatchTraits?
     public var properties: BatchProperties?
     public var type: String?
+    public var name: String?
 }
