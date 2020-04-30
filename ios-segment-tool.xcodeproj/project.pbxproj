@@ -235,12 +235,14 @@
 		AC02DB302444D6A900151532 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s";
 			};
 			name = Debug;
 		};
 		AC02DB312444D6A900151532 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s";
 			};
 			name = Release;
 		};
