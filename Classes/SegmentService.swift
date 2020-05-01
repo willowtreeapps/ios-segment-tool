@@ -8,6 +8,9 @@
 
 import Foundation
 
+public typealias SegmentResult<T: SegmentBatchCodable> = Result<[T], Error>
+public typealias DefaultSegmentResult = SegmentResult<DefaultBatchElement>
+
 public enum SegmentError: Error {
     case noElementsFound
 }
@@ -20,14 +23,14 @@ public class SegmentService {
     }
     
     // Waits in 5 second intervals. Default numberOfTries waits 90 seconds.
-    public func checkForSegmentCalls(expectedCallType: String, expectedPageType: String, completion: @escaping (Result<[BatchElement], Error>) -> ()) {
+    public func checkForSegmentCalls<T: SegmentBatchCodable>(expectedCallType: String, expectedCallName: String, completion: @escaping (Result<[T], Error>) -> ()) {
         let client = CharlesClient()
         let service = SegmentService()
         client.exportData(completion: { (data) in
             service.dataToProxyLogIn(from: data!, completion: { (log) in
-                service.segmentCallsIn(from: log, completion: { (segmentList) in
+                service.segmentCallsIn(from: log, completion: { (segmentList: [Segment<T>]) in
                     service.matchingSegmentBatchesIn(
-                        completion: { (expectedBatchElements) in
+                        completion: { (expectedBatchElements: [T]) in
                             if expectedBatchElements.count > 0 {
                                 completion(.success(expectedBatchElements))
                             }
@@ -37,7 +40,7 @@ public class SegmentService {
                     },
                         from: segmentList,
                         expectedCallType: expectedCallType,
-                        expectedPageType: expectedPageType
+                        expectedCallName: expectedCallName
                     )
                 })
             })
@@ -49,25 +52,25 @@ public class SegmentService {
         completion(log)
     }
     
-    public func segmentCallsIn(from log: [ProxyLogElement], completion: @escaping ([Segment]) -> Void) {
-        var segmentList: [Segment] = []
+    public func segmentCallsIn<T: SegmentBatchCodable>(from log: [ProxyLogElement], completion: @escaping ([Segment<T>]) -> Void) {
+        var segmentList: [Segment<T>] = []
         for element in log {
             if element.host == "api.segment.io" {
                 let segmentString = element.request?.body?.text
                 let segmentData = segmentString!.data(using: .utf8)!
-                let segment = try! self.decoder.decode(Segment.self, from: segmentData)
+                let segment = try! self.decoder.decode(Segment<T>.self, from: segmentData)
                 segmentList.append(segment)
             }
         }
         completion(segmentList)
     }
     
-    public func matchingSegmentBatchesIn(completion: @escaping ([BatchElement]) -> Void, from segmentList: [Segment], expectedCallType: String, expectedPageType: String) {
-        var expectedBatchElements: [BatchElement] = []
+    public func matchingSegmentBatchesIn<T: SegmentBatchCodable>(completion: @escaping ([T]) -> Void, from segmentList: [Segment<T>], expectedCallType: String, expectedCallName: String) {
+        var expectedBatchElements: [T] = []
         for segmentElement in segmentList {
             let batch = segmentElement.batch
             for batchElement in batch ?? [] {
-                if batchElement.type == expectedCallType && batchElement.properties?.pageType == expectedPageType {
+                if batchElement.type == expectedCallType && batchElement.name == expectedCallName {
                     expectedBatchElements.append(batchElement)
                 }
             }

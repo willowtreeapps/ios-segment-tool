@@ -19,6 +19,7 @@
 		AC02DB772444D9ED00151532 /* ProxyLogRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02DB6C2444D9ED00151532 /* ProxyLogRequest.swift */; };
 		AC02DB782444D9ED00151532 /* ValidatorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02DB6D2444D9ED00151532 /* ValidatorExtension.swift */; };
 		AC02DB792444D9ED00151532 /* ProxyLogRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02DB6E2444D9ED00151532 /* ProxyLogRequestBody.swift */; };
+		B155D789245A09ED0007ABA3 /* SegmentBatchCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B155D788245A09ED0007ABA3 /* SegmentBatchCodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +48,7 @@
 		AC02DB6C2444D9ED00151532 /* ProxyLogRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyLogRequest.swift; sourceTree = "<group>"; };
 		AC02DB6D2444D9ED00151532 /* ValidatorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorExtension.swift; sourceTree = "<group>"; };
 		AC02DB6E2444D9ED00151532 /* ProxyLogRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyLogRequestBody.swift; sourceTree = "<group>"; };
+		B155D788245A09ED0007ABA3 /* SegmentBatchCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentBatchCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				AC02DB642444D9ED00151532 /* ProxyLogElement.swift */,
 				AC02DB652444D9ED00151532 /* SegmentService.swift */,
+				B155D788245A09ED0007ABA3 /* SegmentBatchCodable.swift */,
 				AC02DB662444D9ED00151532 /* BatchElement.swift */,
 				AC02DB672444D9ED00151532 /* CharlesClient.swift */,
 				AC02DB682444D9ED00151532 /* BatchApp.swift */,
@@ -172,6 +175,7 @@
 				AC02DB712444D9ED00151532 /* BatchElement.swift in Sources */,
 				AC02DB742444D9ED00151532 /* Segment.swift in Sources */,
 				AC02DB6F2444D9ED00151532 /* ProxyLogElement.swift in Sources */,
+				B155D789245A09ED0007ABA3 /* SegmentBatchCodable.swift in Sources */,
 				AC02DB752444D9ED00151532 /* BatchProperties.swift in Sources */,
 				AC02DB702444D9ED00151532 /* SegmentService.swift in Sources */,
 				AC02DB762444D9ED00151532 /* BatchTraits.swift in Sources */,
@@ -189,14 +193,14 @@
 		AC02DB302444D6A900151532 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ENABLE_BITCODE = YES;
+				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s";
 			};
 			name = Debug;
 		};
 		AC02DB312444D6A900151532 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ENABLE_BITCODE = YES;
+				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s";
 			};
 			name = Release;
 		};

@@ -2,8 +2,8 @@ import Foundation
 import XCTest
 
 public extension XCTestCase {
-    typealias ValidationFunction = (BatchElement) -> ()
-    func segmentValidator(result: Result<[BatchElement], Error>, expectation: XCTestExpectation, maxRetries: Int, currentRetries: Int = 0, expectedCallType: String = "screen", expectedPageType: String, validator: @escaping ValidationFunction) {
+    typealias ValidationFunction<T: SegmentBatchCodable> = (T) -> ()
+    func segmentValidator<T: SegmentBatchCodable>(result: Result<[T], Error>, expectation: XCTestExpectation, maxRetries: Int, currentRetries: Int = 0, expectedCallType: String = "screen", expectedCallName: String, validator: @escaping ValidationFunction<T>) {
         switch result {
         case .success(let finalResult):
             XCTAssertFalse(finalResult.isEmpty)
@@ -16,9 +16,9 @@ public extension XCTestCase {
                 expectation.fulfill()
                 return
             }
-            SegmentService().checkForSegmentCalls(expectedCallType: expectedCallType, expectedPageType: expectedPageType) { [weak self]
+            SegmentService().checkForSegmentCalls(expectedCallType: expectedCallType, expectedCallName: expectedCallName) { [weak self]
                 (result) in
-                self?.segmentValidator(result: result, expectation: expectation, maxRetries: maxRetries, currentRetries: currentRetries + 1, expectedCallType: expectedCallType, expectedPageType: expectedPageType, validator: validator)
+                self?.segmentValidator(result: result, expectation: expectation, maxRetries: maxRetries, currentRetries: currentRetries + 1, expectedCallType: expectedCallType, expectedCallName: expectedCallName, validator: validator)
             }
         }
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct BatchApp: Codable {
+public struct DefaultBatchApp: Codable {
     public var buildNumber: String?
     public var appName: String?
     public var appVersion: String?
