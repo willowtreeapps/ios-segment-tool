@@ -19,6 +19,7 @@
 		AC02DB772444D9ED00151532 /* ProxyLogRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02DB6C2444D9ED00151532 /* ProxyLogRequest.swift */; };
 		AC02DB782444D9ED00151532 /* ValidatorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02DB6D2444D9ED00151532 /* ValidatorExtension.swift */; };
 		AC02DB792444D9ED00151532 /* ProxyLogRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02DB6E2444D9ED00151532 /* ProxyLogRequestBody.swift */; };
+		B1238AD1245C5EEA00CCD5B2 /* SegmentCallType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1238AD0245C5EEA00CCD5B2 /* SegmentCallType.swift */; };
 		B155D789245A09ED0007ABA3 /* SegmentBatchCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B155D788245A09ED0007ABA3 /* SegmentBatchCodable.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		AC02DB6C2444D9ED00151532 /* ProxyLogRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyLogRequest.swift; sourceTree = "<group>"; };
 		AC02DB6D2444D9ED00151532 /* ValidatorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorExtension.swift; sourceTree = "<group>"; };
 		AC02DB6E2444D9ED00151532 /* ProxyLogRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyLogRequestBody.swift; sourceTree = "<group>"; };
+		B1238AD0245C5EEA00CCD5B2 /* SegmentCallType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCallType.swift; sourceTree = "<group>"; };
 		B155D788245A09ED0007ABA3 /* SegmentBatchCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentBatchCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 				AC02DB672444D9ED00151532 /* CharlesClient.swift */,
 				AC02DB682444D9ED00151532 /* BatchApp.swift */,
 				AC02DB692444D9ED00151532 /* Segment.swift */,
+				B1238AD0245C5EEA00CCD5B2 /* SegmentCallType.swift */,
 				AC02DB6A2444D9ED00151532 /* BatchProperties.swift */,
 				AC02DB6B2444D9ED00151532 /* BatchTraits.swift */,
 				AC02DB6C2444D9ED00151532 /* ProxyLogRequest.swift */,
@@ -184,6 +187,7 @@
 				AC02DB792444D9ED00151532 /* ProxyLogRequestBody.swift in Sources */,
 				AC02DB722444D9ED00151532 /* CharlesClient.swift in Sources */,
 				AC02DB732444D9ED00151532 /* BatchApp.swift in Sources */,
+				B1238AD1245C5EEA00CCD5B2 /* SegmentCallType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

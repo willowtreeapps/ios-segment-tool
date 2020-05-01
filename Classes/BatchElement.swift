@@ -14,4 +14,5 @@ public struct DefaultBatchElement: SegmentBatchCodable {
     public var properties: DefaultBatchProperties?
     public var type: String?
     public var name: String?
+    public var event: String?
 }

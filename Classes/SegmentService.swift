@@ -22,8 +22,15 @@ public class SegmentService {
         
     }
     
-    // Waits in 5 second intervals. Default numberOfTries waits 90 seconds.
-    public func checkForSegmentCalls<T: SegmentBatchCodable>(expectedCallType: String, expectedCallName: String, completion: @escaping (Result<[T], Error>) -> ()) {
+    /**
+     Checks for event calls based on call type and identifier.
+
+     - Parameters:
+        - expectedCallType: Type of the call, either screen, track, or identify.
+        - expectedIdentifier: This will match against the "name" of screen calls or the "event" of track calls. **Ignored in identify calls.**
+        - completion: Completion handler to be performed with the collected calls. Should specify a type conforming to `SegmentBatchCodable`.
+     */
+    public func checkForSegmentCalls<T: SegmentBatchCodable>(expectedCallType: SegmentCallType, expectedIdentifier: String?, completion: @escaping (Result<[T], Error>) -> ()) {
         let client = CharlesClient()
         let service = SegmentService()
         client.exportData(completion: { (data) in
@@ -40,7 +47,7 @@ public class SegmentService {
                     },
                         from: segmentList,
                         expectedCallType: expectedCallType,
-                        expectedCallName: expectedCallName
+                        expectedIdentifier: expectedIdentifier
                     )
                 })
             })
@@ -65,13 +72,26 @@ public class SegmentService {
         completion(segmentList)
     }
     
-    public func matchingSegmentBatchesIn<T: SegmentBatchCodable>(completion: @escaping ([T]) -> Void, from segmentList: [Segment<T>], expectedCallType: String, expectedCallName: String) {
+    public func matchingSegmentBatchesIn<T: SegmentBatchCodable>(completion: @escaping ([T]) -> Void, from segmentList: [Segment<T>], expectedCallType: SegmentCallType, expectedIdentifier: String?) {
         var expectedBatchElements: [T] = []
         for segmentElement in segmentList {
             let batch = segmentElement.batch
             for batchElement in batch ?? [] {
-                if batchElement.type == expectedCallType && batchElement.name == expectedCallName {
-                    expectedBatchElements.append(batchElement)
+                if batchElement.type == expectedCallType.rawValue {
+                    switch expectedCallType {
+                    case .screen:
+                        if batchElement.name == expectedIdentifier {
+                            expectedBatchElements.append(batchElement)
+                        }
+
+                    case .track:
+                        if batchElement.event == expectedIdentifier {
+                            expectedBatchElements.append(batchElement)
+                        }
+
+                    case .identify:
+                        expectedBatchElements.append(batchElement)
+                    }
                 }
             }
         }
