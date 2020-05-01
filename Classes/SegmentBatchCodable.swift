@@ -10,4 +10,5 @@ import Foundation
 public protocol SegmentBatchCodable: Codable {
     var type: String? { get }
     var name: String? { get }
+    var event: String? { get }
 }
