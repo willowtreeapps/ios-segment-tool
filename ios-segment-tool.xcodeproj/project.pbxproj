@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22F87CA0245C91E9000927A7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F87C9F245C91E9000927A7 /* XCTest.framework */; };
 		AC02DB6F2444D9ED00151532 /* ProxyLogElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02DB642444D9ED00151532 /* ProxyLogElement.swift */; };
 		AC02DB702444D9ED00151532 /* SegmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02DB652444D9ED00151532 /* SegmentService.swift */; };
 		AC02DB712444D9ED00151532 /* BatchElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC02DB662444D9ED00151532 /* BatchElement.swift */; };
@@ -33,11 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		AC02DB432444D6C100151532 /* ios-segment-tool.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ios-segment-tool.podspec"; sourceTree = "<group>"; };
-		AC02DB452444D6C100151532 /* ios-segment-tool.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ios-segment-tool.podspec"; sourceTree = "<group>"; };
-		AC02DB472444D6C100151532 /* ios-segment-tool.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ios-segment-tool.podspec"; sourceTree = "<group>"; };
-		AC02DB492444D6C100151532 /* ios-segment-tool.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ios-segment-tool.podspec"; sourceTree = "<group>"; };
-		AC02DB4B2444D6C100151532 /* ios-segment-tool.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ios-segment-tool.podspec"; sourceTree = "<group>"; };
+		22F87C9F245C91E9000927A7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AC02DB502444D75D00151532 /* libios-segment-tool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libios-segment-tool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC02DB642444D9ED00151532 /* ProxyLogElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProxyLogElement.swift; sourceTree = "<group>"; };
 		AC02DB652444D9ED00151532 /* SegmentService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentService.swift; sourceTree = "<group>"; };
@@ -57,17 +54,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F87CA0245C91E9000927A7 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22F87C9E245C91E9000927A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				22F87C9F245C91E9000927A7 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AC02DB2B2444D6A900151532 = {
 			isa = PBXGroup;
 			children = (
 				AC02DB322444D6C100151532 /* ios-segment-tool */,
 				AC02DB512444D75D00151532 /* Products */,
+				22F87C9E245C91E9000927A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,61 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				AC02DB632444D9ED00151532 /* Classes */,
-				AC02DB412444D6C100151532 /* ios-segment-tool */,
 			);
 			path = "ios-segment-tool";
-			sourceTree = "<group>";
-		};
-		AC02DB412444D6C100151532 /* ios-segment-tool */ = {
-			isa = PBXGroup;
-			children = (
-				AC02DB422444D6C100151532 /* 0.0.1 */,
-				AC02DB442444D6C100151532 /* 0.0.3 */,
-				AC02DB462444D6C100151532 /* 0.0.4 */,
-				AC02DB482444D6C100151532 /* 0.0.5 */,
-				AC02DB4A2444D6C100151532 /* 0.0.2 */,
-			);
-			path = "ios-segment-tool";
-			sourceTree = "<group>";
-		};
-		AC02DB422444D6C100151532 /* 0.0.1 */ = {
-			isa = PBXGroup;
-			children = (
-				AC02DB432444D6C100151532 /* ios-segment-tool.podspec */,
-			);
-			path = 0.0.1;
-			sourceTree = "<group>";
-		};
-		AC02DB442444D6C100151532 /* 0.0.3 */ = {
-			isa = PBXGroup;
-			children = (
-				AC02DB452444D6C100151532 /* ios-segment-tool.podspec */,
-			);
-			path = 0.0.3;
-			sourceTree = "<group>";
-		};
-		AC02DB462444D6C100151532 /* 0.0.4 */ = {
-			isa = PBXGroup;
-			children = (
-				AC02DB472444D6C100151532 /* ios-segment-tool.podspec */,
-			);
-			path = 0.0.4;
-			sourceTree = "<group>";
-		};
-		AC02DB482444D6C100151532 /* 0.0.5 */ = {
-			isa = PBXGroup;
-			children = (
-				AC02DB492444D6C100151532 /* ios-segment-tool.podspec */,
-			);
-			path = 0.0.5;
-			sourceTree = "<group>";
-		};
-		AC02DB4A2444D6C100151532 /* 0.0.2 */ = {
-			isa = PBXGroup;
-			children = (
-				AC02DB4B2444D6C100151532 /* ios-segment-tool.podspec */,
-			);
-			path = 0.0.2;
 			sourceTree = "<group>";
 		};
 		AC02DB512444D75D00151532 /* Products */ = {
@@ -235,12 +189,14 @@
 		AC02DB302444D6A900151532 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_BITCODE = YES;
 			};
 			name = Debug;
 		};
 		AC02DB312444D6A900151532 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_BITCODE = YES;
 			};
 			name = Release;
 		};
@@ -349,7 +305,6 @@
 				DEVELOPMENT_TEAM = 6663MSD9N9;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
