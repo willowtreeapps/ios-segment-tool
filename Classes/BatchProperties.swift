@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct BatchProperties: Codable {
+public struct DefaultBatchProperties: Codable {
         public var pageName: String?
         public var appVersion: String?
         public var pushEnabled: Bool?
